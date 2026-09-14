@@ -58,15 +58,11 @@ Questions that do not trigger the skill: asking Claude to remember something new
 
 ## Installation
 
-Clone the repository into your Claude skills directory, so that `SKILL.md` sits directly inside a folder named `analyze-memory`:
+Download [analyze-memory.zip](https://github.com/paolodalprato/analyze-memory/releases/latest/download/analyze-memory.zip). The archive holds the skill only, `SKILL.md`, `reference/` and `assets/`, with `analyze-memory/` as the top-level entry.
 
-```
-git clone https://github.com/paolodalprato/analyze-memory.git ~/.claude/skills/analyze-memory
-```
+**Claude Code.** Extract the archive into your Claude skills directory, so that you end up with `.claude/skills/analyze-memory/SKILL.md`. The skills directory is `~/.claude/skills/` on macOS and Linux, and `%USERPROFILE%\.claude\skills\` on Windows. Claude picks the skill up from `SKILL.md` and loads the reference files as needed.
 
-On Windows the skills directory is `%USERPROFILE%\.claude\skills\`. Claude picks the skill up from `SKILL.md` and loads the reference files as needed.
-
-To install it on claude.ai instead, zip the folder with `analyze-memory/` as the top-level entry and upload the archive as a skill.
+**claude.ai.** Upload the archive as it is, from the skills section of the settings.
 
 ## Layout
 
