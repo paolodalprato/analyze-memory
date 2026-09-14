@@ -31,27 +31,27 @@ It does not search conversation history, project documents or files on disk, whi
 
 ## How to ask
 
-The skill triggers on questions about the memory store, not on questions that memory merely helps to answer. The examples below are templates: replace the parts in angle brackets. Ask in any language; the answer comes back in the language of the question, and quotations stay in the language of the entry.
+The skill triggers on questions about the memory store, not on questions that memory merely helps to answer. The examples below are templates: replace the parts in square brackets. Ask in any language; the answer comes back in the language of the question, and quotations stay in the language of the entry.
 
 Reading one entry:
 
-- "What does the memory of project <name> say about <topic>, and when was it written?"
-- "Show me the entry where you got the idea that <fact>. Where did it come from?"
+- "What does the memory of project [name] say about [topic], and when was it written?"
+- "Show me the entry where you got the idea that [fact]. Where did it come from?"
 
 Comparing entries:
 
-- "Compare what projects <A> and <B> remember about <topic>, and tell me where they diverge. Do not merge them."
-- "Which of these two entries is more recent, the one in <project A> or the one in <project B>, and what actually changed?"
+- "Compare what projects [A] and [B] remember about [topic], and tell me where they diverge. Do not merge them."
+- "Which of these two entries is more recent, the one in [project A] or the one in [project B], and what actually changed?"
 
 Searching a topic:
 
-- "Search all my memories for every mention of <topic> and tell me where each hit came from."
-- "Go through everything you remember about <process> across all projects and list the entries that disagree."
+- "Search all my memories for every mention of [topic] and tell me where each hit came from."
+- "Go through everything you remember about [process] across all projects and list the entries that disagree."
 
 Checking consistency:
 
-- "Is anything in my memories contradicting itself about <topic>?"
-- "That decision about <subject> I took in <month>, is it still the current one or did I supersede it somewhere?"
+- "Is anything in my memories contradicting itself about [topic]?"
+- "That decision about [subject] I took in [month], is it still the current one or did I supersede it somewhere?"
 - "Run a consistency check across all my memories, every project, and give me a report I can reuse next month."
 
 Questions that do not trigger the skill: asking Claude to remember something new, asking it to fix or delete an entry, searching the conversation history, searching project documents or files on disk. Those are different requests, and the first two are writes, which this skill refuses by design.
