@@ -26,7 +26,7 @@ It does not search conversation history, project documents or files on disk, whi
 Clone the repository into your Claude skills directory, so that `SKILL.md` sits directly inside a folder named `analyze-memory`:
 
 ```
-git clone https://github.com/<your-account>/analyze-memory.git ~/.claude/skills/analyze-memory
+git clone https://github.com/paolodalprato/analyze-memory.git ~/.claude/skills/analyze-memory
 ```
 
 On Windows the skills directory is `%USERPROFILE%\.claude\skills\`. Claude picks the skill up from `SKILL.md` and loads the reference files as needed.
