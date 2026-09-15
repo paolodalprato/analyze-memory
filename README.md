@@ -56,13 +56,30 @@ Checking consistency:
 
 Questions that do not trigger the skill: asking Claude to remember something new, asking it to fix or delete an entry, searching the conversation history, searching project documents or files on disk. Those are different requests, and the first two are writes, which this skill refuses by design.
 
+## Where it works
+
+The skill works wherever Claude uses its memory, meaning the general memory and the project memories, and can load skills. Today that means:
+
+- **Claude chat**, on the web at claude.ai and in the Chat tab of Claude Desktop;
+- **Claude Cowork**, which shares the same memory as chat.
+
+Incognito chats do not use memory, so in those the skill has nothing to read.
+
+One special case concerns Cowork. Sessions run in the cloud by default, and local execution remains available for some existing desktop deployments. According to the [memory documentation](https://support.claude.com/en/articles/11817273-use-claude-s-chat-search-and-memory-to-build-on-previous-context), Cowork sessions that run locally on the computer do not use memory, so the skill has nothing to read there either.
+
+Memory has to be turned on in the Memory section of the settings, and code execution has to be enabled, because skills depend on it. On Team and Enterprise plans, an owner or admin decides whether memory and custom skills are available.
+
+On a large archive the skill keeps reading and comparing apart. Where the environment offers sub-agents it hands the reading to them, otherwise it reads in batches and writes its notes to files as it goes. `reference/reading-at-scale.md` describes both.
+
 ## Installation
 
 Download [analyze-memory.zip](https://github.com/paolodalprato/analyze-memory/releases/latest/download/analyze-memory.zip). The archive holds the skill only, `SKILL.md`, `reference/` and `assets/`, with `analyze-memory/` as the top-level entry.
 
-**Claude Code.** Extract the archive into your Claude skills directory, so that you end up with `.claude/skills/analyze-memory/SKILL.md`. The skills directory is `~/.claude/skills/` on macOS and Linux, and `%USERPROFILE%\.claude\skills\` on Windows. Claude picks the skill up from `SKILL.md` and loads the reference files as needed.
+**Upload to your account.** Upload the archive as it is from **Customize > Skills**, and make sure the skill is toggled on. Claude then uses the skill by itself whenever a request matches it, in chat and in Cowork.
 
-**claude.ai.** Upload the archive as it is, from the skills section of the settings.
+**Local copy in Claude Desktop.** You can also extract the archive, by hand or by asking Claude to do it, into your local skills folder, so that you end up with `~/.claude/skills/analyze-memory/SKILL.md`. A chat does not load that folder by itself. Claude uses the skill from there only if it can read local files, for example through a filesystem MCP server such as Desktop Commander, and if your instructions tell it to look in that folder. The skill then works only on that computer.
+
+A line like this in your profile preferences is enough: "Some skills are stored locally in `~/.claude/skills`. When a skill I ask for does not appear among the loaded ones, look for it there before saying it is not available." On Windows that folder could be `C:\Users\<name>\.claude\skills`, and writing the full path in the preference avoids problems with tools that do not expand `~`.
 
 ## Layout
 
